@@ -745,37 +745,24 @@ footer {
 }
 .projects {
   padding: 2rem 1rem;
-  background-color: #111; /* same as your site bg */
-    padding-top: 0rem; /* or 0 */
+  background-color: #111;
   margin-top: 0;
 }
 
 .projects-title {
   text-align: center;
-  font-size: 1.6rem; /* same heading size as swiper */
+  font-size: 1.6rem;
   font-weight: 600;
   color: #fff;
-  margin-top: 0;       /* 🔹 no space above */
-  margin-bottom: 1.5rem; /* keep space below */
-    padding-top: 0rem; /* or 0 */
-  margin-top: 0;
-}
-.projects-title {
-  text-align: center;
-  font-size: 1.6rem; /* same heading size as swiper */
-  font-weight: 600;
-  color: #fff;
-  margin-top: 0;       /* 🔹 no space above */
-  margin-bottom: 1.5rem; /* keep space below */
+  margin: 0 0 1.5rem 0;
 }
 
-
-/* Grid layout similar to swiper card size */
+/* Grid layout */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* small cards like swiper */
-  gap: 1rem; /* tighter gap like swiper */
-  max-width: 1200px; /* center container */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* bigger min size for balance */
+  gap: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -785,16 +772,23 @@ footer {
   padding: 1rem;
   text-align: center;
   color: #fff;
-  font-size: 0.85rem; /* compact text */
+  font-size: 0.85rem;
   transition: transform 0.3s ease;
+
+  /* 🔹 Make equal height cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;       /* let grid stretch equally */
+  min-height: 400px;  /* set a baseline height */
 }
 
 .project-card:hover {
-  transform: scale(1.03); /* small hover effect */
+  transform: scale(1.03);
 }
 
 .project-card h3 {
-  font-size: 1rem; /* like swiper title */
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -802,14 +796,16 @@ footer {
   font-size: 0.8rem;
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  flex-grow: 1; /* 🔹 pushes image down for balance */
 }
 
 /* Images inside card */
 .project-card img {
   width: 100%;
-  max-height: 160px; /* same as swiper */
-  object-fit: cover;
+  height: 180px;      /* fixed height */
+  object-fit: contain; /* keeps proportions */
   border-radius: 8px;
 }
+
 
 }
