@@ -760,7 +760,7 @@ footer {
 /* Grid layout */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* bigger min size for balance */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -775,12 +775,12 @@ footer {
   font-size: 0.85rem;
   transition: transform 0.3s ease;
 
-  /* 🔹 Make equal height cards */
+  /* 🔹 Equal height setup */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;       /* let grid stretch equally */
-  min-height: 400px;  /* set a baseline height */
+  height: 100%;
+  min-height: 400px; /* consistent baseline */
 }
 
 .project-card:hover {
@@ -796,15 +796,16 @@ footer {
   font-size: 0.8rem;
   line-height: 1.2;
   margin-bottom: 0.5rem;
-  flex-grow: 1; /* 🔹 pushes image down for balance */
+  flex-grow: 1; /* pushes image down */
 }
 
-/* Images inside card */
+/* 🔹 Images inside card */
 .project-card img {
   width: 100%;
-  height: 180px;      /* fixed height */
-  object-fit: contain; /* keeps proportions */
+  height: 180px;       /* same height for all */
+  object-fit: contain; /* keeps logos/art aligned */
   border-radius: 8px;
+  margin-top: auto;    /* pushes image to the bottom */
 }
 
 
